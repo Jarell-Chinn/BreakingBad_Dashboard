@@ -1,20 +1,22 @@
+var backgroundImgEl = document.querySelector(".unsplashGen");
+var quoteTextEl = document.querySelector("#todaysQuote");
+var favQuotesEl = document.querySelector("#favQuotes");
 
-// script taken from previous class project to test API keys -- 
-var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
-// var requestUrl = 'https://api.github.com/repos/{owner}/{repo}/issues';
-// https://docs.github.com/en/rest/issues/issues#list-repository-issues
+fetch(
+  "https://api.unsplash.com/photos/random?client_id=oeF6_nedrYDZgPYD3W22C9NSsJsCa0DeZfWTlHO7u2I"
+)
+  .then((response) => response.json())
+  .then((data) => {
+    // Access the URL of the random photo
+    var photoUrl = data.urls.regular;
 
-fetch(requestUrl)
-  .then(function (response) {
-    console.log(response);
-    return response.json();
+    // Create an <img> element and set its source to the random photo URL
+    var imageElement = document.createElement("img");
+    imageElement.src = photoUrl;
+
+    // Append the image element to a container in the HTML
+    backgroundImgEl.appendChild(imageElement);
   })
-  .then(function (data) {
-    console.log("data", data)
-    console.log('Github Repo Issues \n----------');
-    for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      console.log(data[i].url);
-      console.log(data[i].user.login);
-    }
+  .catch((error) => {
+    console.error("Error:", error);
   });
