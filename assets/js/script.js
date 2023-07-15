@@ -8,7 +8,7 @@ function breakingBadQuote() {
     })
     .then(function (data) {
       quoteEl.textContent = '"' + data[0].quote + '"';
-      characterEl.textContent ='"' + data[0].author + '"';
+      characterEl.textContent ='- ' + data[0].author;
       
       var authorEl = data[0].author
       console.log(authorEl)
@@ -70,7 +70,7 @@ function photoSelector(name) {
      desiredSrc = "./assets/images/green/walter/walter" + num + "-green.jpg";
      authorImg.setAttribute('src', desiredSrc);
 
-  } else if (name === 'Mike Ehrmantrout') {
+  } else if (name === 'Mike Ehrmantraut') {
     var num = (Math.floor(Math.random()*2));
      desiredSrc = "./assets/images/green/mike/mike" + num + "-green.jpg";
      authorImg.setAttribute('src', desiredSrc);
@@ -95,21 +95,31 @@ function photoSelector(name) {
      desiredSrc = "./assets/images/green/hank/hank" + num + ".jpg";
      authorImg.setAttribute('src', desiredSrc);
 
-  } 
+  } else if (name === 'Walter Jr.') {
+  var num = (Math.floor(Math.random()*2));
+   desiredSrc = "./assets/images/green/walter-jr/walter-jr" + num + ".jpg";
+   authorImg.setAttribute('src', desiredSrc);
 
+  } 
+    else if (name === 'The fly') {
+    //var num = (Math.floor(Math.random()*0));
+     desiredSrc = "./assets/images/green/fly/fly1.jpg";
+     authorImg.setAttribute('src', desiredSrc);
   
-  
+    } 
+    else if (name === 'Badger') {
+      var num = (Math.floor(Math.random()*2));
+       desiredSrc = "./assets/images/green/badger/badger" + num + ".jpg";
+       authorImg.setAttribute('src', desiredSrc);
+      }
 }
 
-
-
-
-
-
-
-
-
-
+var refresh = document.getElementById("refresh")
+refresh.addEventListener("click", refreshPage)
+function refreshPage() {
+  breakingBadQuote();
+  unsplashAPI();
+}
 
 breakingBadQuote();
 
