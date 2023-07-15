@@ -1,22 +1,17 @@
-var backgroundImgEl = document.querySelector(".unsplashGen");
-var quoteTextEl = document.querySelector("#todaysQuote");
-var favQuotesEl = document.querySelector("#favQuotes");
+function unsplashAPI() {
+  var requestURL =
+    "https://api.unsplash.com/photos/random?client_id=Ab4F25pH3_s49oNWOzNXoahqu18przepQm1JgDMKkZA";
 
-fetch(
-  "https://api.unsplash.com/photos/random?client_id=oeF6_nedrYDZgPYD3W22C9NSsJsCa0DeZfWTlHO7u2I"
-)
-  .then((response) => response.json())
-  .then((data) => {
-    // Access the URL of the random photo
-    var photoUrl = data.urls.regular;
+  fetch(requestURL)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+}
 
-    // Create an <img> element and set its source to the random photo URL
-    var imageElement = document.createElement("img");
-    imageElement.src = photoUrl;
+unsplashAPI();
 
-    // Append the image element to a container in the HTML
-    backgroundImgEl.appendChild(imageElement);
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
+var APIkey = "Ab4F25pH3_s49oNWOzNXoahqu18przepQm1JgDMKkZA";
+var secretKey = "syAWQL1pyzZhz7yIStoCCZ0GfXUqPgQnPrN07A69NNw";
