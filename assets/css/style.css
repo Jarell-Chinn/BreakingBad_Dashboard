@@ -6,13 +6,16 @@ body {
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Special Elite', cursive;
+    background-color: rgba(42,89,19,.9);
+    background-blend-mode: multiply;
 }
 header {
     position:fixed;
-    background-colorbackground: rgb(20,37,12);
+    background: rgb(20,37,12);
     background: linear-gradient(212deg, rgba(20,37,12,1) 0%, rgba(42,89,19,1) 52%, rgba(20,37,12,1) 100%);
     width: 100%;
     text-align: center;
+
 }
 
 .pure-g {
@@ -27,9 +30,9 @@ header {
     text-align: center;
     color:white;
     text-shadow: 2px 2px 2px #2a5913;
-    border: solid darkgreen;
+    /*border: solid darkgreen;*/
 }
-.dark {
+/*.dark {
     background-color: rgba(42,89,19,.5);
 }
 /* typography */
