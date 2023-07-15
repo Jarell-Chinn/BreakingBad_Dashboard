@@ -1,64 +1,67 @@
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    background-image: url(../images/nm-1.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: 'Special Elite', cursive;
-    background-color: rgba(42,89,19,.9);
-    background-blend-mode: multiply;
+  background-image: url(../images/nm-1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Special Elite", cursive;
+  background-color: rgba(42, 89, 19, 0.9);
+  background-blend-mode: multiply;
 }
 header {
-    position:fixed;
-    background: rgb(20,37,12);
-    background: linear-gradient(212deg, rgba(20,37,12,1) 0%, rgba(42,89,19,1) 52%, rgba(20,37,12,1) 100%);
-    width: 100%;
-    text-align: center;
-    box-shadow: 5px 5px 15px black;
-
+  position: fixed;
+  background: rgb(20, 37, 12);
+  background: linear-gradient(
+    212deg,
+    rgba(20, 37, 12, 1) 0%,
+    rgba(42, 89, 19, 1) 52%,
+    rgba(20, 37, 12, 1) 100%
+  );
+  width: 100%;
+  text-align: center;
+  box-shadow: 5px 5px 15px black;
 }
 section img {
-    width: 200px;
-    height: auto;
-    box-shadow: 5px 5px 15px black;
+  width: 200px;
+  height: auto;
+  box-shadow: 5px 5px 15px black;
 }
 .pure-g {
-    padding:20px;
+  padding: 20px;
 }
 header img {
-    box-shadow: 5px 5px 15px black;
-
+  box-shadow: 5px 5px 15px black;
 }
 .card {
-    width: 85%;
-    margin:200px auto;
-    height: 500px;
-    border-radius: 5px;
-    text-align: center;
-    color:white;
-    text-shadow: 2px 2px 2px #2a5913;
-    /*border: solid darkgreen;*/
+  width: 85%;
+  margin: 200px auto;
+  height: 500px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px #2a5913;
+  /*border: solid darkgreen;*/
 }
 /*.dark {
     background-color: rgba(42,89,19,.5);
 }
 /* typography */
 h1 {
-    color:white;
+  color: white;
 }
 
 h2 {
-    color:white;
-    font-size:36px;
-    font-weight: bold;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
 }
 .currentQuote {
-    font-size: 28px;
+  font-size: 28px;
 }
 #character {
-    font-size:20px;
+  font-size: 20px;
 }
 li {
-    list-style: none;
+  list-style: none;
 }
