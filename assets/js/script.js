@@ -1,20 +1,33 @@
+// API that displays a random Breaking Bad Quote
 
-// script taken from previous class project to test API keys -- 
-var requestUrl = 'https://api.github.com/repos/twitter/chill/issues?per_page=5';
-// var requestUrl = 'https://api.github.com/repos/{owner}/{repo}/issues';
-// https://docs.github.com/en/rest/issues/issues#list-repository-issues
-
-fetch(requestUrl)
-  .then(function (response) {
-    console.log(response);
+function breakingBadQuote(){
+  var requestURL = 'https://api.breakingbadquotes.xyz/v1/quotes';
+  fetch (requestURL)
+  .then(function(response){
     return response.json();
   })
-  .then(function (data) {
-    console.log("data", data)
-    console.log('Github Repo Issues \n----------');
-    for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      console.log(data[i].url);
-      console.log(data[i].user.login);
-    }
-  });
+  .then(function(data){
+      console.log(data);
+  })
+}
+
+// breakingBadQuote();
+
+// API that displays random hindi quote
+
+function unsplashAPI(){
+  var requestURL = 'https://api.unsplash.com/photos/random?client_id=Ab4F25pH3_s49oNWOzNXoahqu18przepQm1JgDMKkZA';
+
+  fetch(requestURL)
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    console.log(data)
+  })
+}
+
+unsplashAPI();
+
+var APIkey = 'Ab4F25pH3_s49oNWOzNXoahqu18przepQm1JgDMKkZA';
+var secretKey = 'syAWQL1pyzZhz7yIStoCCZ0GfXUqPgQnPrN07A69NNw';
