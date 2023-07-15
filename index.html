@@ -4,33 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!--normalize.css is used instead of reset. read more at https://purecss.io/base/-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css"> 
     <!--link to CSS Framework - PURE.CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <!-- our team's stylesheet below -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   </head>
-  <body style="background-image: url(./assets/images/sf-1.jpg);">
-    <main id="unsplashGen">
-     <header>
-      <h1>BreakingBad Inspiration</h1>
-      <img src=".assets/images/logo.jpg" alt="BreakingBad Quotes logo"/>
-      <nav>
-        <ul>
-          <a href="#"><li>Refresh</li></a>
-          <a href="#fav"><li>Favorites</li></a>
-        </ul>
+  <body>
+    <main>
+     <header class="pure-g">
+      <img class="pure-u-1-3" src=".assets/images/logo.jpg" alt="BreakingBad Quotes logo"/>
+      <h1 class="pure-u-1-3">BreakingBad Inspiration</h1>
+      <nav class="pure-u-1-3">
+          <a class="pure-button" href="#">Refresh</a>
+          <a class="pure-button" href="#fav">Favorites</a>
       </nav>
      </header>
-     <article>
-      <h2>DATE/TIME - generated dynamically</h2>
-      <section>
-        <p id="todaysQuote" class="currentQuote">*automatically generated*</p>
+     <article class="pure-g">
+      <section class="card dark">
+        <h2>Today's Date<br>7/15/23</h2>
+        <p id="todaysQuote" class="currentQuote">"Now, hey, remember, not all learning comes out of books."</p>
+        <p id="character">Jesse Pinkman</p>
         <img src="#" alt="character icons"/>
       </section>
      </article>
-     <article>
-      <ul id="favQuotes">
-        <li>auto generated appended quotes based on the user</li>
-      </ul>
+     <article class="pure-g">
+      <section class="card dark" id="fav">
+        <h2>Favorite Quotes</h2>
+        <ul id="favQuotes">
+          <li>auto generated appended quotes based on the user</li>
+        </ul>
+      </section>
      </article>
     </main>
   </body>
