@@ -1,5 +1,11 @@
 // API that displays a random Breaking Bad Quote
-var favorites = [];
+if (!localStorage.getItem("favorites")){
+  var favorites = [];
+} else {
+  var favorites = JSON.parse(localStorage.getItem("favorites"));
+  console.log('pulled!');
+}
+
 var quote;
 
 function breakingBadQuote() {
@@ -116,25 +122,32 @@ function refreshPage() {
 
 breakingBadQuote();
 
+
 var likeButton = document.getElementById("likeButton");
 var favQuotes = document.getElementById("favQuotes");
 
-likeButton.addEventListener("click", favoritesDisplay);
+likeButton.addEventListener("click", addToFavorites);
+
+function addToFavorites (){
+  favorites.push(quote);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  favoritesDisplay();
+}
 
 function favoritesDisplay() {
-  favorites.push(quote);
-
-  localStorage.setItem("favorites", JSON.stringify(favorites));
-
-  favorites = JSON.parse(localStorage.getItem("favorites"));
-  var favoriteQuote = document.createElement("li");
+  var favorites = JSON.parse(localStorage.getItem("favorites"));
+  console.log('pulled!');
+  
 
   for (var i = 0; i < favorites.length; i++) {
-    favoriteQuote.textContent = favorites[i].quote + " -" + favorites[i].author;
+    var favoriteQuote = document.createElement("li");
+    favoriteQuote.textContent = favorites[i].quote + " - " + favorites[i].author;
+    console.log('li added!');
     favQuotes.appendChild(favoriteQuote);
   }
 }
 
+favoritesDisplay();
 // unsplashAPI();
 // https://api.unsplash.com/search/collections?page=1&query=office
 
