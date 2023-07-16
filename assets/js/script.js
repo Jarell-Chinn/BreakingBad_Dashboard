@@ -95,7 +95,7 @@ function photoSelector(name) {
      desiredSrc = "./assets/images/green/hank/hank" + num + ".jpg";
      authorImg.setAttribute('src', desiredSrc);
 
-  } else if (name === 'Walter Jr.') {
+  } else if (name === 'Walter White Jr') {
   var num = (Math.floor(Math.random()*2));
    desiredSrc = "./assets/images/green/walter-jr/walter-jr" + num + ".jpg";
    authorImg.setAttribute('src', desiredSrc);

@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  transition: all .2s ease-in;
+
 }
 body {
   background-image: url(../images/nm-1.jpg);
@@ -64,4 +66,15 @@ h2 {
 }
 li {
   list-style: none;
+}
+.fa-circle-star {
+  color:darkkhaki;
+  font-size:20px;
+  text-shadow: 0px 0px 0px;
+  transition: all .2s ease-in;
+}
+.fa-circle-star:hover {
+  color:yellowgreen;
+  font-size:30px;
+  text-shadow: 0px 0px 20px yellow;
 }
