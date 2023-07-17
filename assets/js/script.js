@@ -1,9 +1,9 @@
 // API that displays a random Breaking Bad Quote
-if (!localStorage.getItem("favorites")){
+if (!localStorage.getItem("favorites")) {
   var favorites = [];
 } else {
   var favorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log('pulled!');
+  console.log("pulled!");
 }
 
 var quote;
@@ -122,13 +122,12 @@ function refreshPage() {
 
 breakingBadQuote();
 
-
 var likeButton = document.getElementById("likeButton");
 var favQuotes = document.getElementById("favQuotes");
 
 likeButton.addEventListener("click", addToFavorites);
 
-function addToFavorites (){
+function addToFavorites() {
   favorites.push(quote);
   localStorage.setItem("favorites", JSON.stringify(favorites));
   favoritesDisplay();
@@ -136,13 +135,13 @@ function addToFavorites (){
 
 function favoritesDisplay() {
   var favorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log('pulled!');
-  
+  console.log("pulled!");
 
   for (var i = 0; i < favorites.length; i++) {
     var favoriteQuote = document.createElement("li");
-    favoriteQuote.textContent = favorites[i].quote + " - " + favorites[i].author;
-    console.log('li added!');
+    favoriteQuote.textContent =
+      favorites[i].quote + " - " + favorites[i].author;
+    console.log("li added!");
     favQuotes.appendChild(favoriteQuote);
   }
 }
