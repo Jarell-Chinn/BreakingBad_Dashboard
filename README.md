@@ -2,12 +2,17 @@
 
 ## Technology Used
 
-| Technology Used |                                                    Resource URL                                                    |
-| --------------- | :----------------------------------------------------------------------------------------------------------------: |
-| HTML            |       [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)       |
-| CSS             |        [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)        |
-| Git             |                                    [https://git-scm.com/](https://git-scm.com/)                                    |
-| JavaScript      | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
+| Technology Used             |                                                    Resource URL                                                    |
+| --------------------------- | :----------------------------------------------------------------------------------------------------------------: |
+| HTML                        |       [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)       |
+| CSS                         |        [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)        |
+| Git                         |                                    [https://git-scm.com/](https://git-scm.com/)                                    |
+| JavaScript                  | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
+| AOS                         |                       [https://michalsnik.github.io/aos/](https://michalsnik.github.io/aos/)                       |
+| Pure CSS                    |                                     [https://purecss.io/](https://purecss.io/)                                     |
+| Breakingbad quote generator |                          [https://breakingbadquotes.xyz/](https://breakingbadquotes.xyz/)                          |
+| Unsplash                    |                         [https://unsplash.com/developers](https://unsplash.com/developers)                         |
+| Dayjs                       |       [https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js](https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js)       |
 
 ## Description
 
@@ -17,7 +22,7 @@ This is a dashboard inspired by the show Breaking Bad that gives you random quot
 
 ## Usage
 
-![Breaking Bad Dashboard](./assets/images/BreakingBadPage.png)
+![Breaking Bad Dashboard](./assets/images/BreakingBadO.png)
 
 # Learning points/Features
 

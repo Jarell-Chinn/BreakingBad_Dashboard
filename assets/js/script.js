@@ -167,14 +167,19 @@ function addToFavorites() {
 
 function favoritesDisplay() {
   var favorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log("pulled!");
+  while (favQuotes.firstChild) {
+    favQuotes.removeChild(favQuotes.firstChild);
+  }
+  {
+    console.log("pulled!");
 
-  for (var i = 0; i < favorites.length; i++) {
-    var favoriteQuote = document.createElement("li");
-    favoriteQuote.textContent =
-      favorites[i].quote + " - " + favorites[i].author;
-    console.log("li added!");
-    favQuotes.appendChild(favoriteQuote);
+    for (var i = 0; i < favorites.length; i++) {
+      var favoriteQuote = document.createElement("li");
+      favoriteQuote.textContent =
+        favorites[i].quote + " - " + favorites[i].author;
+      console.log("li added!");
+      favQuotes.appendChild(favoriteQuote);
+    }
   }
 }
 unsplashAPI();
