@@ -65,7 +65,7 @@ function unsplashAPI() {
 
   var requestURL =
     "https://api.unsplash.com/photos/random?query=new-mexico&client_id=" +
-    apiKey3;
+    apiKey2;
 
   fetch(requestURL)
     .then((response) => response.json())
@@ -79,11 +79,11 @@ function unsplashAPI() {
         "style",
         "background-image:url(" + photoUrl + ")"
       );
-      // imageElement.src = photoUrl;
+      imageElement.src = photoUrl;
 
       // Append the image element to a container in the HTML
-      // var container = document.getElementById("backgroundimg");
-      // container.appendChild(imageElement);
+      var container = document.getElementById("backgroundimg");
+      container.appendChild(imageElement);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -177,7 +177,7 @@ function favoritesDisplay() {
     favQuotes.appendChild(favoriteQuote);
   }
 }
-
+unsplashAPI();
 favoritesDisplay();
 // unsplashAPI();
 // https://api.unsplash.com/search/collections?page=1&query=office
