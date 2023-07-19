@@ -172,6 +172,7 @@ function favoritesDisplay() {
   }
   {
     console.log("pulled!");
+    favorites.reverse();
 
     for (var i = 0; i < favorites.length; i++) {
       var favoriteQuote = document.createElement("li");
