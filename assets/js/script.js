@@ -3,14 +3,17 @@ quoteEl.textContent = "";
 var characterEl = document.getElementById("character");
 characterEl.textContent = "";
 var authorImg = document.getElementById("icons");
-var todayDateEl = (document.getElementById("todaysDate").textContent =
-  todayDate);
+
 var refresh = document.getElementById("refresh");
 var likeButton = document.getElementById("likeButton");
 var favQuotes = document.getElementById("favQuotes");
 var removeButton = document.getElementById("removeButton");
 //
+dayjs();
 var todayDate = dayjs().format("MM/DD/YYYY");
+var todayDateEl = (document.getElementById("todaysDate").textContent =
+  todayDate);
+
 var quote;
 
 AOS.init();
