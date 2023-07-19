@@ -166,6 +166,7 @@ function favoritesDisplay() {
       var favoriteQuote = document.createElement("li");
       favoriteQuote.textContent =
         '"' + favorites[i].quote + '"' + " - " + favorites[i].author;
+      favoriteQuote.innerHTML += ' <i class="fa-sharp fa-solid fa-circle-minus"></i>';
 
       favQuotes.appendChild(favoriteQuote);
     }
@@ -179,6 +180,26 @@ function Clearlist() {
   }
   localStorage.clear();
 }
+
+// deleteFavorite feature
+
+favQuotes.addEventListener('click', function(event){
+
+  console.log(event.target.getAttribute('class'));
+  if (event.target.getAttribute('class') === 'fa-sharp fa-solid fa-circle-minus') {
+    event.target.parentElement.remove();
+    // remove element from favorites array
+  }
+  
+  
+  
+
+});
+
+
+
+
+
 
 // event listeners
 refresh.addEventListener("click", refreshPage);
