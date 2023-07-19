@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
+  <!-- this Id is for the js.  -->
   <body id="backgroundimg">
     <main>
      <header data-aos="fade-down"
@@ -32,11 +33,12 @@
      </header>
      <article class="pure-g">
       <section class="card">
-        <h2>Today's Date<br><span id="todaysDate">7/15/23</h2>
+        <!-- all the id's here we used as selectors in our js. -->
+        <h2>Today's Date<br><span id="todaysDate"></h2>
         <p data-aos="fade-right"
-        data-aos-duration="1000" id="todaysQuote" class="currentQuote">"Now, hey, remember, not all learning comes out of books."</p>
+        data-aos-duration="1000" id="todaysQuote" class="currentQuote"></p>
         <p data-aos="zoom-in"
-        data-aos-duration="1000" id="character">Jesse Pinkman</p>
+        data-aos-duration="1000" id="character"></p>
         <img data-aos="flip-up"
         data-aos-duration="1000" id="icons" src="" alt="character icons"/>
         <!-- use the likeButton ID to trigger the eventListener for saving the current quote to the favorite quotes library-->
@@ -47,6 +49,7 @@
       <section data-aos="fade-up"
       data-aos-duration="2000" class="card" id="fav">
         <h2>Favorite Quotes</h2>
+        <!-- is button is for clearing the favorites list -->
         <p id="removeButton"><i class="fa-sharp fa-solid fa-circle-minus"></i></p>
         <!-- favorite quotes will be appended here -->
         <ul id="favQuotes">
@@ -54,6 +57,7 @@
       </section>
      </article>
     </main>
+    <!-- our libraries connections and our link to our js. -->
     <script
     src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="

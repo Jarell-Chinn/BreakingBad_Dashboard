@@ -34,7 +34,7 @@ This is a dashboard inspired by the show Breaking Bad that gives you random quot
 
 Chris Larson
 
-- [Github](https://github.com/larsonwerks)
+- [Github](https://github.com/chlarson74)
 
 Justin Choi
 
