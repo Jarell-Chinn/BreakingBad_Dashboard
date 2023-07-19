@@ -1,3 +1,18 @@
+var quoteEl = document.getElementById("todaysQuote");
+quoteEl.textContent = "";
+var characterEl = document.getElementById("character");
+characterEl.textContent = "";
+var authorImg = document.getElementById("icons");
+var todayDateEl = (document.getElementById("todaysDate").textContent =
+  todayDate);
+var refresh = document.getElementById("refresh");
+var likeButton = document.getElementById("likeButton");
+var favQuotes = document.getElementById("favQuotes");
+var removeButton = document.getElementById("removeButton");
+//
+var todayDate = dayjs().format("MM/DD/YYYY");
+var quote;
+
 AOS.init();
 
 // You can also pass an optional settings object
@@ -22,21 +37,18 @@ AOS.init({
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
 });
-dayjs();
-var todayDate = dayjs().format("MM/DD/YYYY");
 
-var todayDateEl = (document.getElementById("todaysDate").textContent =
-  todayDate);
+//
 
-// API that displays a random Breaking Bad Quote
+// Getting localstorage ready to display
 if (!localStorage.getItem("favorites")) {
   var favorites = [];
 } else {
   var favorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log("pulled!");
 }
+//Functions
 
-var quote;
+// Fetches quotes/author
 
 function breakingBadQuote() {
   var requestURL = "https://api.breakingbadquotes.xyz/v1/quotes";
@@ -50,13 +62,11 @@ function breakingBadQuote() {
       characterEl.textContent = "- " + data[0].author;
 
       var authorEl = data[0].author;
-      console.log(authorEl);
       photoSelector(authorEl);
-      console.log(data[0].author);
     });
 }
 
-// breakingBadQuote();
+// fetches image of New Mexico and displays as background
 
 function unsplashAPI() {
   var apiKey = "Ab4F25pH3_s49oNWOzNXoahqu18przepQm1JgDMKkZA";
@@ -70,8 +80,6 @@ function unsplashAPI() {
   fetch(requestURL)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-
       var photoUrl = data.urls.regular;
 
       // Create an <img> element and set its source to the random photo URL
@@ -84,13 +92,7 @@ function unsplashAPI() {
       console.error("Error:", error);
     });
 }
-
-var quoteEl = document.getElementById("todaysQuote");
-quoteEl.textContent = "";
-var characterEl = document.getElementById("character");
-characterEl.textContent = "";
-var authorImg = document.getElementById("icons");
-
+//  choosing the author pfp
 function photoSelector(name) {
   var desiredSrc = "";
 
@@ -136,21 +138,13 @@ function photoSelector(name) {
     authorImg.setAttribute("src", desiredSrc);
   }
 }
-
-var refresh = document.getElementById("refresh");
-refresh.addEventListener("click", refreshPage);
+breakingBadQuote();
+//  refresh button
 function refreshPage() {
   breakingBadQuote();
   unsplashAPI();
 }
-
-breakingBadQuote();
-
-var likeButton = document.getElementById("likeButton");
-var favQuotes = document.getElementById("favQuotes");
-
-likeButton.addEventListener("click", addToFavorites);
-
+// adding quote to localstorage
 function addToFavorites() {
   if (!favorites.includes(quote)) {
     favorites.push(quote);
@@ -158,7 +152,7 @@ function addToFavorites() {
     favoritesDisplay();
   }
 }
-
+// displaying the favorites list to the page
 function favoritesDisplay() {
   var favorites = JSON.parse(localStorage.getItem("favorites"));
   while (favQuotes.firstChild) {
@@ -171,25 +165,27 @@ function favoritesDisplay() {
     for (var i = 0; i < favorites.length; i++) {
       var favoriteQuote = document.createElement("li");
       favoriteQuote.textContent =
-      '"' + favorites[i].quote + '"' + " - " + favorites[i].author;        
-      //favoriteQuote.innerHTML += ' <i id="remove" class="fa-sharp fa-solid fa-circle-minus"></i>';
+        '"' + favorites[i].quote + '"' + " - " + favorites[i].author;
+
       favQuotes.appendChild(favoriteQuote);
     }
   }
 }
-// favQuotes.addEventListener("click", removeQuote(event)) 
-// // var removeButton = document.getElementsByClassName("fa-circle-minus")
-// // console.log(removeButton)
-// // removeButton.addEventListener("click", removeQuote())
-// function removeQuote(e) {
-//   //event.target
-//   //var unfavoriteQuote = document.removeEventListener("li");
-//   console.log(e.target)
-// }
+//  clears favorites list and clears localstorage
 
+function Clearlist() {
+  while (favQuotes.firstChild) {
+    favQuotes.removeChild(favQuotes.firstChild);
+  }
+  localStorage.clear();
+}
+
+// event listeners
+refresh.addEventListener("click", refreshPage);
+likeButton.addEventListener("click", addToFavorites);
+removeButton.addEventListener("click", Clearlist);
+
+// Page load functions
+dayjs();
 unsplashAPI();
 favoritesDisplay();
-// unsplashAPI();
-// https://api.unsplash.com/search/collections?page=1&query=office
-
-// Make a GET request to Unsplash API for a random photo
