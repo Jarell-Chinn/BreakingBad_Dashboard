@@ -75,21 +75,15 @@ function unsplashAPI() {
       var photoUrl = data.urls.regular;
 
       // Create an <img> element and set its source to the random photo URL
-      var imageElement = document.body.setAttribute(
+      document.body.setAttribute(
         "style",
         "background-image:url(" + photoUrl + ")"
       );
-      imageElement.src = photoUrl;
-
-      // Append the image element to a container in the HTML
-      var container = document.getElementById("backgroundimg");
-      container.appendChild(imageElement);
     })
     .catch((error) => {
       console.error("Error:", error);
     });
 }
-//
 
 var quoteEl = document.getElementById("todaysQuote");
 quoteEl.textContent = "";
@@ -177,12 +171,22 @@ function favoritesDisplay() {
     for (var i = 0; i < favorites.length; i++) {
       var favoriteQuote = document.createElement("li");
       favoriteQuote.textContent =
-        favorites[i].quote + " - " + favorites[i].author;
-      console.log("li added!");
+      '"' + favorites[i].quote + '"' + " - " + favorites[i].author;        
+      //favoriteQuote.innerHTML += ' <i id="remove" class="fa-sharp fa-solid fa-circle-minus"></i>';
       favQuotes.appendChild(favoriteQuote);
     }
   }
 }
+// favQuotes.addEventListener("click", removeQuote(event)) 
+// // var removeButton = document.getElementsByClassName("fa-circle-minus")
+// // console.log(removeButton)
+// // removeButton.addEventListener("click", removeQuote())
+// function removeQuote(e) {
+//   //event.target
+//   //var unfavoriteQuote = document.removeEventListener("li");
+//   console.log(e.target)
+// }
+
 unsplashAPI();
 favoritesDisplay();
 // unsplashAPI();
