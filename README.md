@@ -36,7 +36,7 @@ Pure CSS to create grids and measure units for content for each element. Also ma
 
 ## All the features and mobile compatibility
 
-![Breaking Bad Dashboard Gif]()
+![Breaking Bad Dashboard Gif](./assets/images/ezgif.com-gif-maker.gif)
 
 # Learning points/Features
 
